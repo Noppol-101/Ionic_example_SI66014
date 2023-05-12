@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Example
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,9 +12,73 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="text-align: center;">
+    <ion-toolbar>
+      <ion-title>Instroduce Yourself</ion-title>
+    </ion-toolbar>
   </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="Name: " [(ngModel)]="Name!" [clearInput]="true" placeholder="Enter name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Age: " [(ngModel)]="Age!" type="number" [clearInput]="true" placeholder="Enter age (years)"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group [(ngModel)]="Sex">
+          <ion-item>
+            <ion-col>
+              <ion-radio value="male">Male</ion-radio>
+            </ion-col>
+            <ion-col>
+              <ion-radio value="female">Female</ion-radio>
+            </ion-col>
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="What is your favorite color?:" [(ngModel)]="Colors" [clearInput]="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="What is your favorite food?:" [(ngModel)]="Foods" [clearInput]="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-toolbar>
+          <ion-title>Social Media</ion-title>
+        </ion-toolbar>
+        <ion-item class="label">
+          <ion-label>Line : </ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled" name="isInputEnabled"></ion-checkbox>
+          <ion-input type="text" [(ngModel)]="Line" [disabled]="!isInputEnabled"></ion-input>
+        </ion-item>
+        <ion-item class="label">
+          <ion-label>Facebook : </ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled1" name="isInputEnabled1"></ion-checkbox>
+          <ion-input type="text" [(ngModel)]="Facebook" [disabled]="!isInputEnabled1"></ion-input>
+        </ion-item>
+        <ion-item class="label">
+          <ion-label>Instagram : </ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled2" name="isInputEnabled2"></ion-checkbox>
+          <ion-input type="text" [(ngModel)]="IG" [disabled]="!isInputEnabled2"></ion-input>
+        </ion-item><br>
+        <div style="text-align: center;">
+          <ion-button (click)="onClick()">Save</ion-button>
+          <ion-button (click)="navigateToHome2()">BMI</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+

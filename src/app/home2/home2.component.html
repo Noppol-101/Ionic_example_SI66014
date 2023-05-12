@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      BMI Calculator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div style="text-align: center;">
+    <ion-toolbar>
+      <ion-title>BMI Calculator</ion-title>
+    </ion-toolbar>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="Weight: " [(ngModel)]="Weight" type="number" [clearInput]="true" placeholder="Enter weight (kg)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Height: " [(ngModel)]="Height" type="number" [clearInput]="true" placeholder="Enter height (cm)"></ion-input>
+        </ion-item>
+        <br>
+        <div style="text-align: center;">
+          <ion-button id = 'res-alert' (click)="BmiCalculate()">Calculate</ion-button>
+          <ion-button (click)="navigateToHome1()">Back</ion-button>
+          <ion-alert trigger="res-alert" header="Your BMI!!!" subHeader="Your BMI is {{BmiLevel}}" message="{{Bmi}}" 
+          [buttons]="alertButton"></ion-alert>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
